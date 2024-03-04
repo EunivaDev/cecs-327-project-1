@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  master:
+    build:
+      context: .
+      dockerfile: Dockerfile_master
+    ports:
+      - "5000:5000"
+
+  node1:
+    build:
+      context: .
+      dockerfile: Dockerfile_node
+    depends_on:
+      - master
+
+  node2:
+    build:
+      context: .
+      dockerfile: Dockerfile_node
+    depends_on:
+      - master
+
+  node3:
+    build:
+      context: .
+      dockerfile: Dockerfile_node
+    depends_on:
+      - master
+
+  node4:
+    build:
+      context: .
+      dockerfile: Dockerfile_node
+    depends_on:
+      - master
+      

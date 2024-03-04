@@ -1,0 +1,7 @@
+FROM python:3.10
+
+WORKDIR /cecs-327-project-1
+
+COPY master.py /cecs-327-project-1/master.py
+
+CMD ["python3", "master.py"]

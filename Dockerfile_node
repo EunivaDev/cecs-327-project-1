@@ -1,0 +1,7 @@
+FROM python:3.10
+
+WORKDIR /cecs-327-project-1
+
+COPY node.py /cecs-327-project-1/node.py
+
+CMD ["python3", "node.py"]
