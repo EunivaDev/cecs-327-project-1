@@ -19,6 +19,7 @@ import threading
 #TESTING, may ermove
 def handleNodeConnection(conn, addr):
     print(f"Node connected: {addr} and {conn}")
+    data = conn.recv(1024)
 
 #TESTING, may remove
 def startServer():

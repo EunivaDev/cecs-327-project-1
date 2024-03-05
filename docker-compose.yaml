@@ -5,34 +5,37 @@ services:
     build:
       context: .
       dockerfile: Dockerfile_master
-    ports:
-      - "5000:5000"
+    networks:
+      - distributed-network
 
   node1:
     build:
       context: .
       dockerfile: Dockerfile_node
-    depends_on:
-      - master
+    networks:
+      - distributed-network
 
   node2:
     build:
       context: .
       dockerfile: Dockerfile_node
-    depends_on:
-      - master
+    networks:
+      - distributed-network
 
   node3:
     build:
       context: .
       dockerfile: Dockerfile_node
-    depends_on:
-      - master
+    networks:
+      - distributed-network
 
   node4:
     build:
       context: .
       dockerfile: Dockerfile_node
-    depends_on:
-      - master
-      
+    networks:
+      - distributed-network
+
+networks:
+  distributed-network:
+    driver: bridge
