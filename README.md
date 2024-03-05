@@ -14,6 +14,7 @@ Setup steps:
 4. In WSL2 or terminal, ~$ sudo usermod -aG docker $USER
 5. To verify if it worked: ~$ getent group docker ---- ~$ getent group sudo
 6. ~$ docker network create -d bridge Proj1-distributed-network
+7. Run the YAML docker file: ~$ docker-compose build ---- ~$ docker-compose up
 
 (if 4-5 doesn't work, ~$ newgrp docker (right after 4))
 
